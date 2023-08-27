@@ -1,12 +1,15 @@
 import React from "react";
 import './Card.css';
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
+
 
 const Card = (props) => {
    const { item } = props;
-  // console.log(data);
+   
   return (
     <div className="main-container">
+      <Link to={`/${item.id}`}>
       <div className="card">
       <LazyLoadImage src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
             className="poster" 
@@ -23,7 +26,7 @@ const Card = (props) => {
         </div>
        
       </div>
-    
+      </Link>
     </div>
   );
 };

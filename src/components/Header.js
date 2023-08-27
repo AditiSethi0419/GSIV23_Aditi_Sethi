@@ -20,7 +20,7 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg sticky-top">
         <div className="container-fluid shadow justify-content-between">
         <form className="d-flex  " style={styles.form} role="search">
-        {/* <i class="fa fa-search" aria-hidden="true"></i> */}
+        {/* <i className="fa fa-search" aria-hidden="true"></i> */}
         <input className="form-control me-10 p-2 " type="search" style={styles.input} placeholder="Search" aria-label="Search"></input>
        
       </form>

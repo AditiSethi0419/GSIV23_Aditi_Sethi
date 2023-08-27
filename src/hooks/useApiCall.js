@@ -8,7 +8,7 @@ const useApiCall = (URL) => {
     const [apiData,setApiData]=useState([]);//list of all the movies
     const [loading,setLoading]=useState(false);//show loading logo conditionally
     const [error,setError]=useState(null);
-
+    const [totalPages,setTotalPages] =useState(1);
 
     useEffect(()=>{
         const fetchData=async ()=>{
@@ -21,7 +21,9 @@ const useApiCall = (URL) => {
                   });
                 
                 setApiData(response.data.results);
-                console.log(response.data)
+                setTotalPages(response.data.total_pages);
+                //console.log(response.data)
+                //console.log(response.data.total_pages);
                 setLoading(false);
             }
             catch(e)
@@ -33,7 +35,7 @@ const useApiCall = (URL) => {
         };
         fetchData()},[URL])
     
-  return [apiData,loading, error]
+  return [apiData,loading, error,totalPages]
 }
 
 export default useApiCall;

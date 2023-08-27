@@ -1,18 +1,20 @@
 import React from 'react';
-import useApiCall from '../hooks/useApiCall';
+
 import Card from './Card';
 import './DisplayCard.css';
 
 
+
+
 const DisplayCard = (props) => {
-   
-    const {URL} = props;
-    const [data, loading, error] = useApiCall(URL); //custom hook to fetch api data
-   // console.log(data);
+    const {data,loading,error}=props;
+    // const {URL} = props;
+    
  
 
     
   return (
+    <>
     <div className='display'>
       { loading?<h1>Loading.....</h1>:
         error?<h1>Your data is facing error to get loaded</h1>:
@@ -22,6 +24,8 @@ const DisplayCard = (props) => {
         })
       }
     </div>
+   
+    </>
   );
 }
 

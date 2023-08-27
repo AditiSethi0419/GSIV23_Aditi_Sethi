@@ -1,21 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const Pagination = () => {
-  return (
-    <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
-  );
-}
+function Pagination(props) {
+    const { pageNum, onNext, onPrev } = props;
+    return (
+      <nav aria-label="Page navigation m-2">
+      <ul className="pagination justify-content-center">
+        <li className="page-item "><span className="page-link"   onClick={onPrev}>Previous</span></li>
+        <li className="page-item"><span className="page-link">{pageNum}</span></li>
+        <li className="page-item"><span className="page-link"  onClick={onNext}>Next</span></li>
+      </ul>
+    </nav>
+    );
+  }
 
 export default Pagination;
